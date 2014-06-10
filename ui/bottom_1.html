@@ -1,0 +1,344 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="utf-8">
+	<title>國泰產險網內網首頁票選活動</title>
+    
+<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet" />	
+    <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+<link rel="stylesheet" href="css/validationEngine.jquery.css" type="text/css"/>	
+		<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
+
+
+        <script src="js/languages/jquery.validationEngine-zh-tw.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/jquery.validationEngine.js" type="text/javascript" charset="utf-8">
+        </script>
+        
+		<script src="ui/jquery.ui.core.js"></script>
+		<script src="ui/jquery.ui.widget.js"></script>
+		<script src="ui/jquery.ui.tabs.js"></script>
+		<link rel="stylesheet" href="demos.css">		
+	<script type="text/javascript">
+	$(function() {
+		$( "#tabs" ).tabs({
+		});
+	});
+	
+	$(function() {
+		$( "input:submit,  input:button", ".demo" ).button();
+		
+	});	
+	
+    $(function() {
+       $('a.lightbox').lightBox();
+    });	
+	
+            jQuery(document).ready(function(){
+                // binds form submission and fields to the validation engine
+                jQuery("#formID").validationEngine();
+            });
+			
+			
+			function HTMLEncode(elem){
+				 var oString = elem.value;
+				 if (oString) {
+					 //oString = oString.replace("&", "&amp;");
+					 oString = oString.replace(/\"/g, "");    //"
+					 oString = oString.replace(/\'/g, "");    //'
+					 oString = oString.replace(/\</g, "");    //<
+					 oString = oString.replace(/\>/g, "");    //>
+					 oString = oString.replace(/script/g, "");
+					
+				 }
+				 elem.value = oString;
+				 
+			}	
+			
+$(document).ready(function() {
+        //簡訊內容字數提醒及顏色提醒
+        $("textarea[id$='group_ta']").keyup(function() {
+            $("#word").html(this.value.length);
+            if ($(this).text().length > 499) {
+                $(".wd").css("color", "red");
+            }
+            else {
+                $(".wd").css("color", "#5A5A5A");
+            }
+        });
+
+
+    }); 			
+	</script>
+	<style>
+	ul#icons {margin: 0; padding: 0;}
+	ul#icons li {margin: 2px;  padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+	ul#icons span.ui-icon {float: left; margin: 0 4px;}	
+
+
+	
+	/* jQuery lightBox plugin - Gallery style */
+	#gallery {
+	width: 820px;
+	background-image: url(css/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png);
+	background-repeat: repeat;
+	}
+	#gallery ul { 
+	/*padding: 30px  30px  ;*/
+	padding-right: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	list-style: none;
+}
+	#gallery ul li {
+	padding: 30px 70px 30px 70px;
+	display: inline;
+}
+	#gallery ul img {
+		border: 5px solid #3e3e3e;
+		border-width: 5px 5px 20px;
+	}
+	#gallery ul a:hover img {
+		border: 5px solid #fff;
+		border-width: 5px 5px 20px;
+		color: #fff;
+	}
+	#gallery ul a:hover { color: #fff; }	
+	
+	.clubPic{
+	padding-right: 10px;
+	padding-left: 10px;
+	font-size: 12px;	
+	}
+	
+	.Text-title{
+	color: #666666;
+	}
+	
+.infos {
+
+	color: #333;
+	font-size: 12px;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+fieldset{
+	padding-left:20px;
+}
+li{
+	padding-left:10px;
+}
+
+p{
+	font-size: 16px;
+}
+	
+legend {
+	font-size: 18px;
+	color: #15428B;
+	font-weight: 900;
+}	
+
+.style2{
+font-size: 16px;
+}
+.style3 {
+	font-size: 14px;
+	font-family: "標楷體";
+	color: #3399FF;
+}
+
+.submit002{
+	position: absolute;
+	z-index: 2;
+	left: auto;
+	top: 375px;
+	right: 60px;
+	bottom: auto;
+}
+    </style>
+</head>
+<body>
+
+<div class="demo">
+<div class="demo-description"><img src="images/banner.png" height="91" width="500"></div>
+<div id="tabs" class="tabs-bottom">
+	<ul>
+		<li><a href="#tabs-1">投票主頁</a></li>
+	  <li><a href="#tabs-2">活動說明</a></li>
+        <!--li><a href="ajax/content2.html">活動說明</a></li-->
+		<li><a href="#tabs-3">首頁功能說明</a></li>
+        
+		
+	</ul>
+	<div id="tabs-1">
+	  <!--ul id="icons" class="ui-widget ui-helper-clearfix">
+<li class="ui-state-default ui-corner-all" title=".ui-icon-circle-triangle-e"><span class="ui-icon ui-icon-circle-triangle-e"></span>活動簡介&nbsp;&nbsp;&nbsp;&nbsp;</li>
+      </ul--> 
+	  <p>      
+1.每人兩票投下自己心中喜歡的首頁版面，未來將以票數最高的版面作公司網內網改版的首頁。(按圖放大)</p>
+<form name="formID" id="formID" class="formular" method="post" action="back.asp" >
+<table width="550" align="center" class="clubContent">
+												
+
+<!--tr>
+<td align="center"  class="clubPic">
+<p class="ui-state-default ui-corner-all" title="崇尚自然基礎板"><span class="Text-title">基礎版</span></p>
+       </td>
+<td align="center" class="clubPic"><p class="ui-state-default ui-corner-all" title="金光閃閃典雅版"><span class="Text-title">典雅版</span></p> </td>
+<td align="center" class="clubPic"><p class="ui-state-default ui-corner-all" title="色彩繽紛活潑板"><span class="Text-title">活潑版</span></p></td>
+</tr>
+<tr-->
+<td colspan="3">												
+<div id="gallery">
+<ul>
+<li>
+
+<a class="lightbox" href="photos/style01.jpg" title="使用既有內網的顏色配置，利用簡約的畫面配上專屬的小Icon呈現多樣的資訊，讓使用者可以快速的延續既有的操作模式並提升介面使用的舒適度。"><img src="photos/style01.jpg"  height="77"  width="100" alt="" /></a></li>
+
+<li><a class="lightbox" href="photos/style02.jpg" title="使用比較強烈的視覺風格呈現，用色偏向於古典而沉穩，呈現華麗而典雅的視覺風格，使用者將可以透過不同於以往的介面呈現感受到不同的使用經驗，不再是面對單調的應用系統介面。"><img src="photos/style02.jpg"  height="77" width="100" alt="" /></a></li>
+
+<li><a class="lightbox" href="photos/style03.jpg" title="使用淡雅而活潑的顏色配置，並將固定的首頁資訊視窗框架移除，讓畫面輕盈而不沉重，色彩亮麗多樣而不雜亂，使用者可以非常舒服的使用此一介面來操作應用系統。"><img src="photos/style03.jpg"  height="77" width="100" alt="" /></a></li>
+</ul>
+</div></td></tr> 
+<tr>
+<td align="center"  class="clubPic"><input class="validate[maxCheckbox[2]] checkbox" type="checkbox" name="group1" id="maxcheck1_1" value="1"/></td>
+<td align="center" class="clubPic"><input class="validate[maxCheckbox[2]] checkbox" type="checkbox" name="group1" id="maxcheck1_2" value="2"/></td>
+<td align="center" class="clubPic"><input class="validate[maxCheckbox[2]] checkbox" type="checkbox" name="group1" id="maxcheck1_3" value="3"/></td>
+</tr>
+<!--tr>
+<td align="left" ><p>此一版本使用既有內網的顏色配置，利用簡約的畫面配上專屬的小IOCN呈現多樣的資訊，讓使用者可以快速的延續既有的操作模式並提升介面使用的舒適度。</p></td>
+<td align="left" ><p>此一版本用比較強烈的視覺風格呈現，用色偏向於古典而沉穩，呈現華麗而典雅的視覺風格，使用者將可以透過不同於以往的介面呈現感受到不同的使用經驗，不再是面對單調的應用系統介面。</p></td>
+<td align="left" ><p>此一版本使用淡雅而活潑的顏色配置，並將固定的首頁資訊視窗框架移除，讓畫面輕盈而不沉重，色彩亮麗多樣而不雜亂，使用者可以非常舒服的使用此一介面來操作應用系統。</p></td>
+
+</tr-->
+                                           
+	  </table>
+     
+      <div class="infos">
+                 <p>2.您的意見將成為我們進步的動力，期望各位同仁能不吝提供建議，不論功能、版面方面都將成為我們調整的參考。</p>
+                  <!--class="validate[required] text-input"-->
+          <textarea  rows="3" cols="145" name="group_ta" id="group_ta" onBlur="HTMLEncode(this);"></textarea>
+
+
+                  </div>   
+
+      
+      <div class="submit002">
+      <input class="submit" type="submit" value="驗證和送出"/>
+</form>
+   
+    
+    </div>
+      
+	</div>
+	<div id="tabs-2">
+<fieldset>
+                <legend>
+                    活動
+  				</legend>       
+<p><strong>活動緣起</strong></p>
+<p>相信大家對現行網內網都不陌生，網內網首頁幾乎是大家最常接觸的網頁，默默的我們公司網內網也陪伴了大家好幾個寒暑，現行進行網內網功能增修作業，除了功能新增外，也對首頁版面進行調整，期能提供員工能有更親切互動介面，也期望新的首頁能有新的氣象，讓國泰產險能開拓嶄新的旅程。</p>
+<p><strong>活動日期</strong></p>
+<p>100/09/27~100/09/29</p>
+<p><strong>活動內容</strong></p>
+<p>活動以網路票選的方式進行，目前提供三種不同風格的首頁讓大家選擇，每人兩票投下自己心中喜歡的首頁版面，未來將以票數最高的版面作公司網內網改版的首頁。</p>
+<!--
+<p><font color="#ff0000"><a class="demo" href='/index.asp?handler=skip' target='_top'>先不投>>進入網內網首頁</a></font>
+<br>
+<a href="bottom_2.html">進入投票</a>
+-->
+<div class="submit001">
+<table>
+<tr><td>
+<input type="button" value="進入投票" onclick="location.reload('bottom_2.asp');"/>
+</td>
+<td>
+<form  method="post" action="/index.asp" >
+<input name="handler" type="hidden" id="handler" value="skip">
+<input  type="submit" value="先不投>>進入網內網" >
+</form>
+</td>
+<td>
+<form  method="post" action="back.asp" >
+<input name="abandon" type="hidden" id="handler" value="Y">
+<input  type="submit" value="棄權" >
+</form>
+</td>
+
+</tr>
+</table>
+</div>
+
+
+</fieldset>
+</div>
+	<div id="tabs-3">
+<fieldset>
+<div id="gallery">
+<ul>
+<li><a class="lightbox" href="photos/description.jpg" title="新版首頁功能說明"><img src="photos/description.jpg"  height="424"  width="600" alt="" /></a></li>
+</ul>
+</div>
+<legend>
+                    新增功能說明(*代表新增功能)
+	</legend>      
+    <p><strong>*(A)站內搜尋功能</strong></p>
+    <p>新增資料搜尋功能，縮短資料尋找時間。提升資料文件的使用率。</p>
+    
+     <p><strong>*(B)經營標語</strong></p>
+    <p>結合公司年度經營標語，凝聚工作目標與共識。</p>
+       
+    <p><strong>(C)單位行事曆</strong></p>
+	  <p>提供單位用的行事曆，方便單位內工作協同作業進行。</p>
+               
+     
+     <p><strong>(D)最新消息</strong></p>  
+	  <p>整合企業網站和網內網的最新消息，企業網站最新消息前會有"企"字的標籤做為區隔。</p>            
+
+     <p><strong>*(E)公布欄</strong></p>  
+	  <p>整合企業網站和網內網的公佈訊息，提昇資訊宣導效果。</p> 
+
+     <p><strong>*(F)常用連結</strong></p>  
+	  <p>提供使用者或管理者設定的常用連結，減少搜尋路徑的時間，提昇工作效率。</p> 	 
+     
+     <p><strong>(G)待辦事項</strong></p>  
+	  <p>整合原網內網待辦事項區塊。</p>  
+ 
+      <p><strong>*(H)最新文件專區</strong></p>  
+	  <p>新增文件資訊訊息提示，加速文件的流覽與使用。</p>                       
+</fieldset>          
+	</div>
+	<!--div id="tabs-4">
+<fieldset>
+                <legend>
+                    目前網內網瓶頸
+  				</legend>    
+    <p><strong>網站內尋找不易</strong></p>
+    <p>現行網內網使用方式是以功能類別階層架構點入查看，隨著功能與文件日益增加，搜尋所花費的時間越久，遇有不常用或不熟悉之文件需要參考時，尋找不易，若有『快速查詢』功能，將可提昇使用效率。</p>
+    
+ <p><strong>相似文件專區維護功能一再開發</strong></p>
+    <p>目前文件專區雖因業務種類不同而規劃不同呈現區域，如現有之『法令遵循作業』、『規章辦法專區』、『早會專區』、『外部派訓暨心得報告專區』、『分層負責表』等系統，但文件專區之維護機制大致相同，即文件上傳/瀏覽/權限控管/變更/刪除等作業，目前每個專區都是以系統開發方式建置，建置過程較久且耗廢資訊人力資源，若能導入文件管理平台，將可更快速提供資訊服務，並讓資訊人力資源花費在其它業務需求上。</p>    
+
+<p><strong>現行安控元件版本待升級</strong></p>
+    <p>目前安全控管機制須在Client端安裝控管元件，控管只適用於IE瀏覽器，限制網頁無法於非IE瀏覽器中使用，且容易因Client端的安全性設定或軟體環境改變，無法達到預期的效果，針對安控現有問題，廠商安控模組已有升級版本，若能配合升級，將可提升安全控管。</p>
+
+       <br>  
+</fieldset>	
+	
+	</div-->	
+</div>
+
+</div><!-- End demo -->
+
+
+
+<div class="demo-description">
+<p></p>
+</div><!-- End demo-description -->
+
+</body>
+</html>
